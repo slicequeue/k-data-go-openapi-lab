@@ -1,7 +1,7 @@
 const path = require('path');
 const dotenv = require('dotenv');
 console.log('__dirname', __dirname);
-dotenv.config({ path: path.join(__dirname, `${process.env.NODE_ENV ? `.${process.env.NODE_ENV}` : ''}.env`) });
+dotenv.config({ path: path.join(__dirname, `${process.env.NODE_ENV ? `.${process.env.NODE_ENV}` : '.dev'}.env`) });
 
 const packageJson = require('../../package.json');
 
