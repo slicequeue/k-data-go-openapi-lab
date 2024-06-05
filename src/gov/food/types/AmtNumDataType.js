@@ -1,5 +1,7 @@
 
-const AmtNumDataType = {
+const 
+
+AmtNumDataType = Object.freeze({
   AMT_NUM1: { label: '에너지(kcal)', unit: 'kcal', name: '에너지' },
   AMT_NUM2: { label: '수분(g)', unit: 'g', name: '수분' },
   AMT_NUM3: { label: '단백질(g)', unit: 'g', name: '단백질' },
@@ -159,6 +161,6 @@ const AmtNumDataType = {
   AMT_NUM157: { label: '페닐알라닌(mg)', unit: 'mg', name: '페닐알라닌' },
   AMT_NUM158: { label: '프롤린(mg)', unit: 'mg', name: '프롤린' },
   AMT_NUM159: { label: '히스티딘(mg)', unit: 'mg', name: '히스티딘' }
-};
+});
 
 module.exports = AmtNumDataType;

@@ -1,8 +1,7 @@
+const AmtCodeTypeResponse = require("./dtos/AmtCodeTypeResponse");
 const FoodNutrition = require("./dtos/FoodNutrition");
 const NutritionComponent = require("./dtos/NutritionComponent");
 const AmtNumDataType = require("./types/AmtNumDataType");
-
-// AMT_NUM
 
 const KEY_NAME_PREFIX_NUTRITION_COMPONENT = 'AMT_NUM';
 
@@ -72,6 +71,26 @@ function toFoodNutrition(apiResponseBodyArrayItem) {
   });
 }
 
+/**
+ * toAmtCodeTypeResponse AmtNumDataType 객체 AmtCodeTypeResponse 으로 전환
+ * @param {AmtNumDataType} amtNumDataType - AmtNumDataType 객체
+ */
+function toAmtCodeTypeResponse(amtNumDataType) {
+  const amtCodeTypeItems = Object.keys(AmtNumDataType)
+  .map(code => {
+    return new AmtCodeTypeResponse.AmtCodeTypeItem(
+      {
+        code,
+        label: AmtNumDataType[code].label,
+        name: AmtNumDataType[code].name,
+        unit: AmtNumDataType[code].unit,
+      }
+    )
+  });
+  return new AmtCodeTypeResponse(amtCodeTypeItems);
+}
+
 module.exports = {
   toFoodNutrition,
+  toAmtCodeTypeResponse,
 }

@@ -4,11 +4,12 @@ const api = require('./api');
 const mapper = require('./mapper');
 const SearchFoodNutritionRequest = require('./dtos/SearchFoodNutritionRequest');
 const SeachFoodNutritionResponse = require('./dtos/SeachFoodNutritionResponse');
+const AmtNumDataType = require('./types/AmtNumDataType');
 
 /**
- * 음식 정보 검색 
- * @param {SearchFoodNutritionRequest} searchFoodNutritionRequest 
- * @returns {SeachFoodNutritionResponse} 
+ * `식품의약품안전처_식품영양성분DB정보` 음식 정보 검색 
+ * @param {SearchFoodNutritionRequest} searchFoodNutritionRequest 요청 인자
+ * @returns {SeachFoodNutritionResponse} 검색 결과
  */
 async function searchFoodNutritionInfo(searchFoodNutritionRequest) {
   if (!searchFoodNutritionRequest instanceof SearchFoodNutritionRequest) {
@@ -32,17 +33,11 @@ async function searchFoodNutritionInfo(searchFoodNutritionRequest) {
   });
 }
 
-module.exports = {
-  searchFoodNutritionInfo,
+function getNutritionComponentTypes() {
+  return mapper.toAmtCodeTypeResponse(AmtNumDataType);
 }
 
-// FIXME 아래 임시 테스트
-// const main = async () => {
-//   const request = new SearchFoodNutritionRequest({
-//     foodNameKr: '오므라이스',
-//   });
-//   const seachFoodNutritionResponse = await searchFoodNutritionInfo(request);
-//   console.log('seachFoodNutritionResponse', seachFoodNutritionResponse.data[0]);
-// }
-
-// main().catch(console.error);
+module.exports = {
+  searchFoodNutritionInfo,
+  getNutritionComponentTypes,
+}

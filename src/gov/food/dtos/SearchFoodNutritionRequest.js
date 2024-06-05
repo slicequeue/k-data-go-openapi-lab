@@ -1,11 +1,10 @@
-
 class SearchFoodNutritionRequest {
 
-  /** @property {string} foodNameKr - 식품명 */
+  /** @property {string} foodNameKr - 검색할 식품명 */
   foodNameKr;
-  /** @property {string} foodNameKr - 데이터생성일자 */
+  /** @property {string} foodNameKr - 검색할 데이터 생성일자 */
   researchYearMonthDate;
-  /** @property {string} foodNameKr - 업체명 */
+  /** @property {string} foodNameKr - 검색할 업체명 */
   makerName;
 
   constructor({
