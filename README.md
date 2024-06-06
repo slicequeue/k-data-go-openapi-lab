@@ -14,11 +14,11 @@
 이 단계를 반복적으로 수행하여 여러 OpenAPI를 사용을 경험해보고 필요한 프로젝트에서 구현한 모듈을 활용하는데 의의가 있습니다.
 
 지금까지 진행한 공공데이터 OpenAPI 목록
-* 국토교통부_(TAGO)_지하철정보: https://www.data.go.kr/data/15098554/openapi.do
-  * 작업 경로: /src/gov/metro.js (리팩토링 예정)
-* 서울특별시_위치정보조회서비스: https://www.data.go.kr/data/15000332/openapi.do
+* `국토교통부_(TAGO)_지하철정보`: https://www.data.go.kr/data/15098554/openapi.do
+  * 작업 경로: /src/gov/tago-subway
+* `서울특별시_위치정보조회서비스`: https://www.data.go.kr/data/15000332/openapi.do
   * 작업 경로: /src/gov/bus.js
-* 식품의약품안전처_식품영양성분DB정보: https://www.data.go.kr/data/15127578/openapi.do
+* `식품의약품안전처_식품영양성분DB정보`: https://www.data.go.kr/data/15127578/openapi.do
   * 작업 경로: /src/gov/food
 
 ## 설치 방법
